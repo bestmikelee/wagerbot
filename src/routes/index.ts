@@ -1,5 +1,8 @@
-import {Router} from 'express';
+import {Application} from 'express';
+import bet from './bet';
 
-const router = Router();
+const routers = (app: Application): void => {
+	app.use('/bet', bet);
+};
 
-export default router;
+export default routers;

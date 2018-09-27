@@ -1,8 +1,9 @@
-import {Router} from 'express';
+import {Router, Response, Request} from 'express';
+const router: Router = Router();
 
-const router = Router();
-
-router.post('/', (req, res) => {
+router.post('/', (req: Request, res: Response) => {
 	console.log(req.body);
-	res.send();
+	res.send('ok');
 });
+
+export default router;

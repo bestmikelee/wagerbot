@@ -4,7 +4,16 @@
   "description": "slack wager bot",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "build": "npm run build-ts",
+    "test": "jest",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "debug": "npm run build && npm run watch-debug",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "watch-node": "nodemon dist/server.js",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
   },
   "author": "Michael Lee",
   "license": "ISC",
@@ -22,7 +31,9 @@
     "@types/dotenv": "^4.0.3",
     "@types/errorhandler": "0.0.32",
     "@types/node": "^10.11.2",
+    "concurrently": "^4.0.1",
     "nodemon": "^1.18.4",
-    "tslint": "^5.11.0"
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
   }
 }
