@@ -15,7 +15,10 @@
             ]
         },
         "sourceRoot": "src",
-        "outDir": "dist"
+        "outDir": "dist",
+        "lib": [
+            "esnext"
+        ],
     },
     "typeRoots": [
         "node_module/@types"
