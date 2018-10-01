@@ -1,5 +1,8 @@
-import errorHandler from 'errorhandler';
+// Load environment variables from .env file -  do this before anything
+import dotenv from 'dotenv';
+dotenv.config({path: '.env'});
 
+import errorHandler from 'errorhandler';
 import app from './app';
 
 /**
