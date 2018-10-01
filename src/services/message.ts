@@ -1,5 +1,5 @@
 import webclient from './slackClient';
-import betService from './betService';
+import betService from '../util/betHelper';
 
 async function sendBetToUser(betData: Book.bet, userData: User.info) {
 	await webclient.chat.postMessage({

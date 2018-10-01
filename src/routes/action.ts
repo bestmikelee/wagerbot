@@ -1,8 +1,5 @@
 import {Router, Response, Request} from 'express';
-import betService from '../services/betService';
 import betDao from '../dao/betDao';
-import bookDao from '../dao/bookDao';
-import userDao from '../dao/userDao';
 import webclient from '../services/slackClient';
 
 const router: Router = Router();
